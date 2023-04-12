@@ -5,6 +5,5 @@ from scipy.stats import anderson_ksamp
 chat_id = 834411281 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
-    statistic, p_value = anderson_ksamp([x, y])
     alpha = 0.07
-    return p_value < alpha
+    return anderson_ksamp([x, y]).pvalue < alpha
